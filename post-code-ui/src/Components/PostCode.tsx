@@ -74,7 +74,7 @@ function PostCode(){
                 />
               )}
             />
-           {postCode ? <PostCodeDetail postCode={postCode} /> : <span className='no-msg'>No Post Code Selected</span>} 
+           {postCode ? <PostCodeDetail postCode={postCode} /> : <span className='no-msg'>No Post Code Selected.</span>} 
         </div>
       );
 }
