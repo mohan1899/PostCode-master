@@ -11,5 +11,6 @@
   "framework": "netcoreapp3.1",
   "s3-prefix": "PostCodeWebAPI/",
   "template": "serverless.template",
+  "s3-bucket": "postcodeapilambdadeployment",
   "template-parameters": ""
 }
