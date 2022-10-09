@@ -30,6 +30,9 @@ namespace PostCodesAPI.Modal
         public double Longitude;
         [JsonProperty("latitude")]
         public double Latitude;
+        /// <summary>
+        /// Calculate Area by Latitude
+        /// </summary>
         public string Area
         {
             get

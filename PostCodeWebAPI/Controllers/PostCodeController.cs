@@ -19,12 +19,23 @@ namespace PostCodeWebAPI.Controllers
         private readonly ILogger<PostCodeController> _logger;
         private readonly IPostCodeService _postCodeService;
 
+        /// <summary>
+        /// PostCodeController Constructor
+        /// </summary>
+        /// <param name="postCodeService"></param>
+        /// <param name="logger"></param>
         public PostCodeController(IPostCodeService postCodeService, ILogger<PostCodeController> logger)
         {
             this._logger = logger;
             this._postCodeService = postCodeService;
         }
 
+
+        /// <summary>
+        /// GetPostCodes function use to get postcode
+        /// </summary>
+        /// <param name="postcode"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("/GetPostCodes")]
         public async Task<IActionResult> GetPostCodes(string postcode)
@@ -44,6 +55,11 @@ namespace PostCodeWebAPI.Controllers
 
         }
 
+        /// <summary>
+        /// GetPostCodeDetail function will return post code details
+        /// </summary>
+        /// <param name="postcode"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("/GetPostCodeDetail")]
         public async Task<IActionResult> GetPostCodeDetail(string postcode)

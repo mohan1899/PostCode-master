@@ -5,7 +5,7 @@ import PostCodeService from '../Services/postcode-service';
 function PostCodeDetail(props: any){
   const [postCodeDetail, setPostCodeDetail] = useState(postCodeModel);
   useEffect(() => {
-    if (props.postCode.length >= 6) {
+    if (props.postCode.length > 5) {
       const getPostCodeDetail = async () => {
         const response = await PostCodeService.GetPostCodeDetail(props.postCode);
         setPostCodeDetail(response.data);

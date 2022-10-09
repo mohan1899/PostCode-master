@@ -17,6 +17,11 @@ namespace PostCodeWebAPI.Service
             this._baseAPIURL = _configuration.GetValue<string>("PostCodeAPI:BaseAPIUrl");
         }
 
+        /// <summary>
+        /// GetPostCodes
+        /// </summary>
+        /// <param name="postcode"></param>
+        /// <returns></returns>
         public async Task<string> GetPostCodes(string postcode)
         {
             HttpClient httpClient = new HttpClient();
@@ -24,6 +29,11 @@ namespace PostCodeWebAPI.Service
             return await httpClient.GetStringAsync(this._baseAPIURL + postcode + "/autocomplete");
         }
 
+        /// <summary>
+        /// GetPostCodeDetail
+        /// </summary>
+        /// <param name="postcode"></param>
+        /// <returns></returns>
         public async Task<string> GetPostCodeDetail(string postcode)
         {
             HttpClient httpClient = new HttpClient();
