@@ -12,5 +12,6 @@
   "s3-prefix": "PostCodeWebAPI/",
   "template": "serverless.template",
   "s3-bucket": "postcodeapilambdadeployment",
+  "stack-name": "PostCodeWebAPI",
   "template-parameters": ""
 }
