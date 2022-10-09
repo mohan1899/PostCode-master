@@ -1,0 +1,36 @@
+.post-code-container {
+    min-height: 300px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(38, 38, 38);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    overflow: hidden;
+    border: 1px solid rgb(230, 235, 241);
+    border-radius: 4px;
+    box-shadow: inherit;
+    margin: 4% 32%;
+}
+.post-code-container table{
+    width: 100%;
+    -webkit-box-shadow: 0 5px 12px -12px rgb(0 0 0 / 29%);
+    -moz-box-shadow: 0 5px 12px -12px rgba(0,0,0,.29);
+    box-shadow: 0 5px 12px -12pxrgba(0,0,0,.29);
+  
+}
+
+.post-code-container td, .post-code-container th {
+    border: none;
+    padding: 12px 16px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.post-code-container tr:nth-child(even){background-color: #f2f2f2;}
+
+.post-code-container tr:nth-child(odd){background-color: #ddd;}
+
+.no-msg{
+  margin: 84px;
+  position: absolute;
+  font-size: 12px;
+}
