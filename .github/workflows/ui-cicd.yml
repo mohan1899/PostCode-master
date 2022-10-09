@@ -6,17 +6,17 @@ name: ReactJS PostCode UI App
 on:
   push:
     paths:
-      - PostCodesUI/**
+      - post-code-ui/**
 
 defaults:
   run:
-    working-directory: ./PostCodesUI
+    working-directory: ./post-code-ui
     
 jobs:
   build:
     runs-on: ubuntu-latest
     env: 
-      working-directory: ./PostCodesUI
+      working-directory: ./post-code-ui
       
     strategy:
       matrix:
@@ -35,8 +35,8 @@ jobs:
     - name: Deploy to AWS CloudFormation
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
-        name: PostCodeUI
-        template: ./PostCodesUI/aws_config/s3_static_website.yaml
+        name: post-code-ui
+        template: ./cloudformation/s3_static_website.yaml
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
         aws-region: us-east-1
@@ -55,4 +55,4 @@ jobs:
       run: yarn run build
 
     - name: Deploy to S3
-      run: aws s3 sync ./build s3://postcodeui.com
+      run: aws s3 sync ./build s3://postcodeweb.com
