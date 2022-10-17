@@ -3,7 +3,7 @@ name: PostCode Web API App
 on:
   push:
     paths:
-      - /PostCodeAPI/PostCodeWebAPI/**
+      - /PostCodeAPI/**
 
 defaults:
   run:

@@ -5,9 +5,6 @@ using System.Threading.Tasks;
 
 namespace PostCode.Service.Service
 {
-    /// <summary>
-    /// IPostCodeService Interface
-    /// </summary>
     public interface IPostCodeService
     {
         /// <summary>
