@@ -20,8 +20,8 @@ function PostCodeDetail(props: any){
         <React.Fragment>
           <h3> Post Code Details</h3>
           <table>
-            <tr><td>Country :</td><td>{postCodeDetail.postcode}</td></tr>
-            <tr><td>Region :</td><td>{postCodeDetail.country}</td></tr>
+            <tr><td>Country :</td><td>{postCodeDetail.country}</td></tr>
+            <tr><td>Region :</td><td>{postCodeDetail.postcode}</td></tr>
             <tr><td>Admin District :</td><td>{postCodeDetail.region}</td></tr>
             <tr><td>Parliamentary Constituency :</td><td>{postCodeDetail.adminDistrict}</td></tr>
             <tr><td>Area :</td><td>{postCodeDetail.area}</td></tr>
