@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace PostCodeWebAPI.Middleware
 {
+    /// <summary>
+    /// This middleware use to handle the global level exception
+    /// </summary>
     public class ExceptionHandlingMiddleware
     {
         private readonly RequestDelegate _next;
