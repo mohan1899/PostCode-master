@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PostCodesAPI.Modal
+namespace PostCode.Model.Model
 {
     public class PostCodeDetail
     {
@@ -30,6 +30,7 @@ namespace PostCodesAPI.Modal
         public double Longitude;
         [JsonProperty("latitude")]
         public double Latitude;
+
         /// <summary>
         /// Calculate Area by Latitude
         /// </summary>

@@ -1,7 +1,8 @@
 import axios from 'axios';
+import configData from "../config.json";
 
 export default axios.create({
-  baseURL: 'https://j5utrffkv3.execute-api.us-east-1.amazonaws.com/Prod',
+  baseURL: configData.SERVER_URL,
   headers: {
     "Content-type": "application/json"
   }

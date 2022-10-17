@@ -2,9 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using PostCodesAPI.Modal;
-using PostCodeWebAPI.Modal;
-using PostCodeWebAPI.Service;
+using PostCode.Model.Model;
+using PostCode.Service.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +39,7 @@ namespace PostCodeWebAPI.Controllers
         [Route("/GetPostCodes")]
         public async Task<IActionResult> GetPostCodes(string postcode)
         {
+            _logger.LogInformation("PostCodeController.GetPostCodes");
             if (string.IsNullOrEmpty(postcode))
                 return BadRequest("Request is Empty");
 
@@ -47,9 +47,11 @@ namespace PostCodeWebAPI.Controllers
             if (string.IsNullOrEmpty(response))
                 return BadRequest("Response is Empty");
 
-            PostCode postCode =  JsonConvert.DeserializeObject<PostCode>(response);
+            PostCodes postCode =  JsonConvert.DeserializeObject<PostCodes>(response);
             if (postCode?.Status != 200)
                return BadRequest(postCode?.Error);
+
+            _logger.LogInformation("PostCodeController.GetPostCodes", postCode.Result);
 
             return Ok(postCode.Result);
 
@@ -64,8 +66,12 @@ namespace PostCodeWebAPI.Controllers
         [Route("/GetPostCodeDetail")]
         public async Task<IActionResult> GetPostCodeDetail(string postcode)
         {
+            _logger.LogInformation("PostCodeController.GetPostCodeDetail");
             if (string.IsNullOrEmpty(postcode))
                 return BadRequest("Request is Empty");
+
+            if (postcode.Length < 6 )
+                return BadRequest("Please provide valid postcode in request");
 
             string response = await _postCodeService.GetPostCodeDetail(postcode);
             if (string.IsNullOrEmpty(response))
@@ -74,6 +80,8 @@ namespace PostCodeWebAPI.Controllers
             PostCodeDetail postCodeDetail = JsonConvert.DeserializeObject<PostCodeDetail>(response);
             if (postCodeDetail?.Status != 200)
                 return BadRequest(postCodeDetail?.Error);
+
+            _logger.LogInformation("PostCodeController.GetPostCodeDetail", postCodeDetail.Result);
 
             return Ok(postCodeDetail.Result);
 

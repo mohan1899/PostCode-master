@@ -6,6 +6,7 @@ function PostCodeDetail(props: any){
   const [postCodeDetail, setPostCodeDetail] = useState(postCodeModel);
   useEffect(() => {
     if (props.postCode.length > 5) {
+      //This function returns PostCodeDetail by the postcode parameter, parameter length should be at least 6 character
       const getPostCodeDetail = async () => {
         const response = await PostCodeService.GetPostCodeDetail(props.postCode);
         setPostCodeDetail(response.data);

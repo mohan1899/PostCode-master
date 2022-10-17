@@ -11,6 +11,7 @@ function PostCode(){
     const loading = open && options.length === 0;
   
     const onChangeHandler = async (value: any) => {
+      //This function returns PostCodes by input parameter
       const response = await PostCodeService.GetPostCodes(value);
       if(response.data) {
         setOptions(response.data);

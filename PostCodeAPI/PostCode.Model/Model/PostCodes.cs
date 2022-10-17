@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PostCodeWebAPI.Modal
+namespace PostCode.Model.Model
 {
-    public class PostCode
+    public class PostCodes
     {
         [JsonProperty("status")]
         public int Status;
